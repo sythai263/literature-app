@@ -1,4 +1,5 @@
 'use client'
+export const runtime = 'edge';
 import { useState, useEffect, use } from 'react'
 import { createClient } from '@/lib/client'
 import { toast } from "sonner"
