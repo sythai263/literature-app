@@ -1,14 +1,6 @@
 {
-  "name": "literature-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.4",
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.105.0",
     "class-variance-authority": "^0.7.1",
@@ -35,5 +27,17 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.85.0"
-  }
+  },
+  "name": "literature-app",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "dev": "next dev",
+    "lint": "eslint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }
